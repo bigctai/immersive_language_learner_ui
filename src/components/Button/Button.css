@@ -1,0 +1,29 @@
+.btn{
+    padding: 10px;
+    border-radius: 5px 5px 5px 5px;
+    color: var(--primary-color);
+}
+
+.btn:hover{
+    cursor: pointer;
+    border: 1px solid white;
+}
+
+.btn-primary{
+    background: var(--secondary-color);
+    width: 50%;
+}
+
+.btn-primary:hover{
+    color: white;
+}
+
+.btn-secondary{
+    background: var(--highlight-color);
+    width: 50%;
+}
+
+.btn-x-button{
+    background: none;
+    color: var(--text-color);
+}

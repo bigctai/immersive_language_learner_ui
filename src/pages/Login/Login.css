@@ -1,0 +1,24 @@
+.login-form {
+    background: white;
+    color: black;
+    width: 50%;
+    height: 40%;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.login-error{
+    border: 1px solid red;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50%;
+    align-items:center;
+    width: 100%;
+}
+
+.no-username{
+    color: red
+}

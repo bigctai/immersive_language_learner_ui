@@ -1,0 +1,46 @@
+.vocab-table {
+  width: 80%;
+  border: 1px solid black;
+  border-radius: 5px 5px 5px 5px;
+  margin: 20px auto;
+  background: rgba(242, 239, 234, 0.95);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.word,
+.translation {
+  width: 30%;
+}
+
+td,
+th {
+  border: 1px solid var(--text-color);
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: var(--secondary-color);
+  color: white;
+  font-weight: 600;
+}
+
+tr:hover {
+  background-color: rgba(62, 155, 76, 0.05);
+}
+
+@media (max-width: 768px) {
+  .vocab-table {
+    width: 95%;
+  }
+
+  td,
+  th {
+    padding: 8px 5px;
+    font-size: 0.9em;
+  }
+}

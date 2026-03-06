@@ -1,0 +1,43 @@
+.vocab-card{
+    border: 1px solid black;
+    background: white;
+    height: 300px;
+    color: black;
+    border-radius: 10px 10px 10px 10px;
+    margin: 20px;
+    justify-content: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vocab-card:hover{
+    border: 1px solid black;
+    outline: none;
+    transform: rotate3d(90deg);
+}
+
+.vocab-card:active{
+    outline: none;
+    border: 1px solid black;
+    transform: rotate3d(90deg);
+}
+.vocab-card:focus{
+    outline: none;
+    border: 1px solid black;
+    transform: rotate3d(90deg);
+}
+
+.card-header{
+    display: flex;
+    justify-content: space-between;
+    width:100%;
+    top: 0;
+}
+.card-text{
+    margin-top: 60px;
+}
+
+.card-text.hidden{
+    display:none;
+}

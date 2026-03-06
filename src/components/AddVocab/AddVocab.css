@@ -1,0 +1,42 @@
+.add-vocab-container{
+    width: 60%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    position: absolute;
+    background: white;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.popup-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.add-vocab-form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.exit-popup{
+    position: absolute;
+    top:5px;
+    right:5px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.add-vocab-form>* {
+    margin-top: 10px;
+}
