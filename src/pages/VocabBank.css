@@ -1,11 +1,10 @@
 .vocab-bank-page {
   position: relative;
   width: 100%;
-  min-height: 100vh;
-  padding-top: 10vh;
+  padding-top: 80px;
 }
 
-.wallpaper {
+/* .wallpaper {
   position: fixed;
   top: 0;
   left: 0;
@@ -14,7 +13,7 @@
   object-fit: cover;
   z-index: -1;
   filter: brightness(0.3) contrast(1.1);
-}
+} */
 
 .vocab-bank-content {
   position: relative;
@@ -40,9 +39,27 @@
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
+.vocab-table{
+    width: 80%;
+    border: 1px solid black;
+    border-radius: 5px 5px 5px 5px;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+.word, .translation{
+    width: 30%;
+}
+td, th{
+    border: 1px solid var(--text-color);
+    padding: 10px;
+}
+
 @media (max-width: 768px) {
   .vocab-bank-page {
-    padding-top: 8vh;
+    padding-top: 60px;
   }
 
   .vocab-title {

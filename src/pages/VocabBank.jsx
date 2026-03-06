@@ -38,15 +38,13 @@ export default function VocabBank() {
 
   return (
     <div className="vocab-bank-page">
-      <img className="wallpaper" src="/taipei.jpg" alt="background"></img>
-
       <div className="vocab-bank-content">
         <h1 className="vocab-title">Your Vocabulary Bank</h1>
 
         <VocabTable vocab={vocab} onAddVocab={displayAddVocab} />
 
         {addVocab && (
-          <AddVocab id={id}>
+          <AddVocab className="vocab-table" id={id}>
             <Button style="x-button" onclick={() => setAddVocab(false)}>
               X
             </Button>

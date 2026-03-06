@@ -10,9 +10,10 @@ export default function Home() {
 
       <div className="landing-content">
         <div className="hero-section">
-          <h1 className="hero-title">Learn Traditional Chinese</h1>
+          <h1 className="hero-title">ㄈㄢtasㄊㄧc Chinese</h1>
           <p className="hero-subtitle">
-            Master the language of Taiwan, Hong Kong, and beyond
+            Master the language of Taiwan by building a vocabulary catered to
+            you!
           </p>
 
           <button className="cta-button" onClick={() => nav("/vocab-bank")}>
@@ -39,12 +40,13 @@ export default function Home() {
           <div className="feature-card">
             <h3>Immersive Learning</h3>
             <p>
-              Practice with authentic vocabulary in context-rich environments
+              Hold realistic conversations that utilize the vocabulary you are
+              targeting
             </p>
           </div>
         </div>
 
-        <div className="cta-section">
+        {/* <div className="cta-section">
           <h2>Ready to Begin Your Journey?</h2>
           <button
             className="secondary-cta-button"
@@ -52,7 +54,7 @@ export default function Home() {
           >
             Open Vocabulary Bank
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

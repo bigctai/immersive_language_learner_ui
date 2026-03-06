@@ -1,59 +1,80 @@
-.nav-bar{
+.nav-bar {
   position: sticky;
   top: 0;
-  width:100%;
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  height: 20vh;
+  height: 80px;
   background: var(--secondary-color);
   margin: 0;
   color: var(--text-color);
   z-index: 999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  gap: 10px;
 }
 
-.routes-list{
+.routes-list {
   display: flex;
   width: 100%;
-  justify-content: start;
-  list-style-type: None;
+  justify-content: flex-start;
+  list-style-type: none;
   margin: 0;
   padding-left: 0;
-  color: var(--text-color);
+  color: white;
   height: 100%;
   align-items: center;
+  gap: 0;
 }
 
-.route{
+.route {
   height: 100%;
-  border-right:1px solid var(--primary-color);
-  align-items:center;
   display: flex;
   justify-content: center;
-  width:100%;
-}
-
-.route-text{
-  padding-left: 20px;
-  padding-right: 20px;
-  color: var(--text-color);
-  height: 100%;
   align-items: center;
+  position: relative;
+}
+
+.route-text {
+  padding: 0 70px;
+  color: white;
+  height: 100%;
   display: flex;
+  align-items: center;
   justify-content: center;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  position: relative;
+  white-space: nowrap;
+}
+
+.route-text::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.route-text:hover {
+  color: var(--primary-color);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.route-text:hover::after {
   width: 100%;
 }
 
-.route-text:hover{
+.route-text.active {
   color: var(--primary-color);
-  border-bottom: 4px solid var(--primary-color);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-.route-text.active{
-  color: var(--primary-color);
-  border-bottom: 4px solid var(--primary-color);
-}
-
-.route-text:active{
-  color: var(--primary-color);
+.route-text.active::after {
+  width: 100%;
 }

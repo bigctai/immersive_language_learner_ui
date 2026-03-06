@@ -1,8 +1,7 @@
 .landing-container {
-  position: relative;
   width: 100%;
-  min-height: 100vh;
   overflow: hidden;
+  position: relative;
 }
 
 .wallpaper {
@@ -24,7 +23,8 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: 40px;
+  overflow: auto;
 }
 
 /* Hero Section */
@@ -81,7 +81,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
-  margin: 40px 0;
   animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
