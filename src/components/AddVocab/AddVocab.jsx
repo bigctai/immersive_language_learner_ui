@@ -12,6 +12,7 @@ export function AddVocab({ id, children }) {
   const [translation, setTranslation] = useState("");
   const [priority, setPriority] = useState("1");
   const [difficulty, setDifficulty] = useState("1");
+  const [pronunciation, setPronunciation] = useState("");
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -21,6 +22,7 @@ export function AddVocab({ id, children }) {
         phrase: phrase.toString(),
         translation: translation.toString(),
         priority: parseInt(priority),
+        pronunciation: pronunciation.toString(),
         difficulty: parseInt(difficulty),
       })
       .then((resp) => console.log(resp))
@@ -34,7 +36,8 @@ export function AddVocab({ id, children }) {
     });
     resp = resp.data;
     console.log(resp);
-    setTranslation(resp.translatedText);
+    setTranslation(resp.chinese);
+    setPronunciation(resp.pinyin);
   }
   return (
     <div className="add-vocab-container">
@@ -42,52 +45,59 @@ export function AddVocab({ id, children }) {
         <div className="popup-container">
           <div className="exit-popup">{children}</div>
           <Form onSubmit={handleSubmit}>
+            <div className="phrase-container">
+              <div className="phrase-component">
+                <label htmlFor="phrase">Phrase</label>
+                <textarea
+                  type="text"
+                  className="translation-text-area"
+                  name="phrase"
+                  id="phrase"
+                  onChange={(e) => setPhrase(e.target.value)}
+                  placeholder="add vocab"
+                  required
+                />
+              </div>
+              {/* use styled button and show translation next to it */}
+              <Button
+                type="button"
+                style="secondary"
+                size="small"
+                onclick={translatePhrase}
+              >
+                go!
+              </Button>
+              <div className="translation-component">
+                <div>Translation</div>
+                <div className="translated">
+                  <div className="translation-text">{translation}</div>
+                  <div className="pronunciation">{pronunciation}</div>
+                </div>
+              </div>
+            </div>
             <div className="form-element">
-              <label for="phrase">Phrase</label>
+              <label htmlFor="priority">Priority: {priority}</label>
               <input
-                type="text"
-                className="form-input"
-                name="phrase"
-                onChange={(e) => setPhrase(e.target.value)}
-                placeholder="add vocab"
-                required
-              ></input>
-            </div>
-            <button onClick={translatePhrase}> Translate</button>
-            <div className="form-element">
-              <div>Translation: {translation}</div>
-            </div>
-            <div className="form-element">
-              <label for="priority">Priority</label>
-              <select
-                name="priority"
+                type="range"
+                min="1"
+                max="5"
                 value={priority}
-                className="form-input"
+                className="slider"
                 id="priority"
                 onChange={(e) => setPriority(e.target.value)}
-              >
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
+              />
             </div>
             <div className="form-element">
-              <label for="difficulty">Difficulty</label>
-              <select
-                className="form-input"
-                name="difficulty"
+              <label htmlFor="difficulty">Difficulty: {difficulty}</label>
+              <input
+                type="range"
+                min="1"
+                max="5"
                 value={difficulty}
+                className="slider"
                 id="difficulty"
                 onChange={(e) => setDifficulty(e.target.value)}
-              >
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
+              />
             </div>
           </Form>
         </div>

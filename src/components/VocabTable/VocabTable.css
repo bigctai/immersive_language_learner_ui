@@ -1,46 +1,86 @@
 .vocab-table {
-  width: 80%;
-  border: 1px solid black;
-  border-radius: 5px 5px 5px 5px;
-  margin: 20px auto;
-  background: rgba(242, 239, 234, 0.95);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin: 0 auto 40px;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(62, 155, 76, 0.1);
+  animation: slideUp 0.5s ease-out;
+  width: 85%;
+}
+
+.word{
+  text-align: center;
+}
+.translation{
+  text-align: center;
+}
+.priority{
+  text-align: center;
+}
+.difficulty{
+  text-align: center;
 }
 
 table {
   border-collapse: collapse;
 }
 
-.word,
-.translation {
-  width: 30%;
-}
-
-td,
-th {
-  border: 1px solid var(--text-color);
-  padding: 10px;
-  text-align: left;
+thead {
+  background: linear-gradient(135deg, #3e9b4c 0%, #2d7a3a 100%);
 }
 
 th {
-  background-color: var(--secondary-color);
   color: white;
+  padding: 18px;
+  text-align: left;
   font-weight: 600;
+  font-size: 1.05em;
+  letter-spacing: 0.5px;
 }
 
-tr:hover {
-  background-color: rgba(62, 155, 76, 0.05);
+td {
+  padding: 16px 18px;
+  border-bottom: 1px solid #e0e6ed;
+  color: #403D58;
+  font-size: 0.95em;
+}
+
+tbody tr {
+  transition: all 0.2s ease;
+}
+
+tbody tr:hover {
+  background-color: #f8f9fc;
+  box-shadow: inset 0 0 8px rgba(62, 155, 76, 0.05);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+  padding: 25px 18px;
+  background: #f8f9fc;
+  border-top: 2px solid #e0e6ed;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 768px) {
   .vocab-table {
-    width: 95%;
+    margin: 0 auto 30px;
   }
 
-  td,
-  th {
-    padding: 8px 5px;
+  th,
+  td {
+    padding: 12px 10px;
     font-size: 0.9em;
   }
 }

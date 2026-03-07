@@ -1,42 +1,170 @@
-.add-vocab-container{
-    width: 60%;
-    height: 60%;
+.add-vocab-container {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  position: relative;
+  animation: slideIn 0.3s ease-out;
+  height:40vh;
+}
+
+.popup-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #403D58;
+  height: 100%;
+  justify-content: space-evenly;
+}
+
+.form-container > * {
+  margin: 0;
+}
+
+.exit-popup {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 1001;
+}
+
+.form-element {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.phrase-container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.form-element label {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.phrase-component{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 999;
-    position: absolute;
-    background: white;
-    border-radius: 10px 10px 10px 10px;
+    width: 100%;
 }
 
-.popup-container{
+.translation-component{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
-.add-vocab-form{
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    justify-content: center;
-    align-items: center;
-    color: black;
+/* override global form-input width inside modal */
+.add-vocab-container .form-input {
+  width: 100%;
 }
 
-.exit-popup{
-    position: absolute;
-    top:5px;
-    right:5px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: #ddd;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
 }
 
-.add-vocab-form>* {
-    margin-top: 10px;
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--secondary-color);
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--secondary-color);
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+.translation-text-area{
+  background: var(--primary-color);
+  border: 1px solid black;
+  border-radius: 5px 5px 5px 5px;
+  color: black;
+  width: 200px;
+  padding: 8px;
+  resize: vertical;
+  min-height: 60px;
+}
+
+.form-element.form-inline {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.translation-text {
+  font-size: 2em;
+  color: #403D58;
+  flex: 1;
+}
+.translated{
+    min-width: 200px;
+    min-height: 60px;
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 5px 5px 5px 5px;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .add-vocab-container {
+    padding: 20px;
+    width: 95%;
+    margin: 20px;
+  }
 }

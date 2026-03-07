@@ -6,6 +6,8 @@
   justify-content: flex-start;
   align-items: center;
   height: 80px;
+  min-height: 80px;
+  flex-shrink: 0;
   background: var(--secondary-color);
   margin: 0;
   color: var(--text-color);

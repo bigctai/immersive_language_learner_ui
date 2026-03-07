@@ -6,6 +6,7 @@ export default function VocabCard({
   phrase,
   translation,
   difficulty,
+  pronunciation,
   priority,
 }) {
   const [flipped, setFlipped] = useState(false);
@@ -29,6 +30,7 @@ export default function VocabCard({
         className={`card-text ${flipped ? "displayed" : "hidden"}`}
       >
         <h2>{translation}</h2>
+        <p>{pronunciation}</p>
       </div>
     </button>
   );

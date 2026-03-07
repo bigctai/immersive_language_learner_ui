@@ -5,11 +5,11 @@
   justify-content: center;
   display: flex;
   width: 100%;
-  --secondary-color: #3e9b4cc8;
+  --secondary-color: #3e9b4cdd;
   --primary-color: #F2EFEA;
-  --highlight-color: #57d8d2;
+  --highlight-color: #3d8c88;
   --text-color: #403D58;
-  --highlight-color: #DBD56E;
+  --special-color: #DBD56E;
   color: var(--text-color);
   z-index: 999;
 }

@@ -31,7 +31,7 @@ export default function Login(props) {
     <div className="nav-page">
       <div className="login-form">
         <h1> Login </h1>
-        <Form onsubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit}>
           <div>
             <label for="username">Username: </label>
             <input
