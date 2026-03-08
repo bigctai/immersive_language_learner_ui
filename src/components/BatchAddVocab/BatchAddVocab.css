@@ -1,0 +1,135 @@
+.batch-add-vocab-container {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: batchFadeIn 0.2s ease-out;
+}
+
+.batch-add-vocab-popup {
+  background: white;
+  border-radius: 16px;
+  padding: 24px 30px;
+  width: 90%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  position: relative;
+  animation: batchSlideIn 0.3s ease-out;
+}
+
+.batch-add-vocab-exit {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 1001;
+}
+
+.batch-add-vocab-title {
+  margin: 0 0 8px 0;
+  font-size: 1.4em;
+  color: #403D58;
+}
+
+.batch-add-vocab-hint {
+  margin: 0 0 16px 0;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.batch-add-vocab-hint code {
+  background: #f0f0f0;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.batch-add-vocab-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.batch-add-vocab-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.batch-add-vocab-field label {
+  font-weight: 600;
+  color: #403D58;
+  font-size: 0.95em;
+}
+
+.batch-add-vocab-textarea {
+  width: 100%;
+  min-height: 140px;
+  padding: 12px;
+  border: 2px solid #e0e6ed;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.95em;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.batch-add-vocab-textarea:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+}
+
+.batch-add-vocab-file {
+  font-size: 0.9em;
+  color: #403D58;
+}
+
+.batch-add-vocab-message {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 0.95em;
+}
+
+.batch-add-vocab-error {
+  background: #fee;
+  color: #c33;
+}
+
+.batch-add-vocab-success {
+  background: #efe;
+  color: #2a5;
+}
+
+.batch-add-vocab-errors {
+  margin: 8px 0 0 0;
+  padding-left: 20px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.batch-add-vocab-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+@keyframes batchFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes batchSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
