@@ -16,7 +16,7 @@ export default function Home() {
             you!
           </p>
 
-          <button className="cta-button" onClick={() => nav("/vocab-bank")}>
+          <button className="cta-button" onClick={() => nav("/vocab_bank")}>
             Start Learning
           </button>
         </div>
