@@ -129,6 +129,14 @@
   color: white;
 }
 
+.vocab-actions-row {
+  width: 50%;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: end;
+  gap: 30px;
+}
+
 .vocab-status {
   text-align: center;
   padding: 30px;
@@ -187,29 +195,9 @@ td {
   font-size: 0.95em;
 }
 
-tbody tr {
-  transition: all 0.2s ease;
-}
-
-tbody tr:hover {
-  background-color: #f8f9fc;
-  box-shadow: inset 0 0 8px rgba(62, 155, 76, 0.05);
-}
-
-tbody tr:last-child td {
-  border-bottom: none;
-}
-
 .word,
 .translation {
   width: 35%;
-}
-
-/* Add Vocab Button Row */
-tbody tr:last-child td {
-  padding: 25px 18px;
-  background: #f8f9fc;
-  border-top: 2px solid #e0e6ed;
 }
 
 @keyframes slideUp {

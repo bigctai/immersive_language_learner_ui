@@ -1,7 +1,8 @@
-import Button from "../Button/Button.jsx";
+
 import "./VocabTable.css";
 
-export default function VocabTable({ vocab, status, onAddVocab }) {
+export default function VocabTable({ vocab, rowClick, status }) {
+
   return (
     <table className="vocab-table">
       <thead>
@@ -24,7 +25,7 @@ export default function VocabTable({ vocab, status, onAddVocab }) {
       }
       {(status === "success" && vocab.length > 0) &&
           vocab.map((word, index) => (
-            <tr key={index}>
+            <tr onClick={() => rowClick(word)} key={index}>
               <td>{word.phrase}</td>
               <td>{word.translation}</td>
               <td>{word.pronunciation}</td>
@@ -32,13 +33,6 @@ export default function VocabTable({ vocab, status, onAddVocab }) {
               <td>{word.difficulty}</td>
             </tr>
           ))}
-        <tr>
-          <td colSpan="5">
-            <Button onclick={onAddVocab} style="primary">
-              Add New Word
-            </Button>
-          </td>
-        </tr>
       </tbody>
     </table>
   );

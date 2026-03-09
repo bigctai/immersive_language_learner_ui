@@ -1,7 +1,8 @@
 .vocab-card{
     border: 1px solid black;
     background: white;
-    height: 300px;
+    height: 400px;
+    width: 800px;
     color: black;
     border-radius: 10px 10px 10px 10px;
     margin: 20px;
@@ -9,6 +10,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .vocab-card:hover{
@@ -35,7 +37,8 @@
     top: 0;
 }
 .card-text{
-    margin-top: 60px;
+    margin-top: 90px;
+    font-size: x-large;
 }
 
 .card-text.hidden{

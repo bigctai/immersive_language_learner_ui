@@ -1,9 +1,9 @@
 import { useEffect, useState, useMemo } from "react";
 import axios from "axios";
 import useId from "../../hooks/useId.js";
-import VocabCard from "../../components/VocabCard/VocabCard.jsx";
 import VocabTable from "../../components/VocabTable/VocabTable.jsx";
 import { AddVocab } from "../../components/AddVocab/AddVocab.jsx";
+import { BatchAddVocab } from "../../components/BatchAddVocab/BatchAddVocab.jsx";
 import Button from "../../components/Button/Button.jsx";
 import { useQuery } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
@@ -13,10 +13,12 @@ export default function VocabBank() {
   const id = useId();
   const nav = useNavigate();
   const [addVocab, setAddVocab] = useState(false);
+  const [batchUpload, setBatchUpload] = useState(false);
   const [priorityFilter, setPriorityFilter] = useState("all");
   const [difficultyFilter, setDifficultyFilter] = useState("all");
   const [sortBy, setSortBy] = useState("phrase");
   const [sortOrder, setSortOrder] = useState("asc");
+  const [editVocab, setEditVocab] = useState(null)
 
   useEffect(() => {
     if (id === "no_id") {
@@ -94,11 +96,14 @@ export default function VocabBank() {
     }
   }
 
+  function rowClick(word) {
+    setEditVocab(word)
+  }
+
   return (
     <div className="vocab-bank-page">
       <img className="wallpaper" src="/taiwan_mountains.jpg" alt="Taiwan mountains"></img>
       <div className="vocab-bank-content">
-        {/* Filters and Sort Controls */}
         <div className="vocab-controls">
           <div className="filter-section">
             <div className="filter-group">
@@ -168,10 +173,18 @@ export default function VocabBank() {
           </div>
         </div>
 
+        <div className="vocab-actions-row">
+          <Button style="secondary" onclick={() => setBatchUpload(true)}>
+            Batch upload
+          </Button>
+          <Button onclick={displayAddVocab} style="primary">
+              Add New Word
+          </Button>
+        </div>
         <VocabTable
           vocab={filteredAndSortedVocab}
           status={status}
-          onAddVocab={displayAddVocab}
+          rowClick={rowClick}
         />
       </div>
 
@@ -183,6 +196,24 @@ export default function VocabBank() {
             </Button>
           </AddVocab>
         </div>
+      )}
+      {editVocab && (
+        <div className="modal-overlay">
+          <div>{editVocab.phrase}</div>
+          <Button style="x-button" onclick={() => setEditVocab(null)}>
+              X
+            </Button>
+        </div>
+      )}
+      {batchUpload && (
+        <BatchAddVocab
+          id={id}
+          onClose={
+            <Button style="x-button" onclick={() => setBatchUpload(false)}>
+              X
+            </Button>
+          }
+        />
       )}
     </div>
   );

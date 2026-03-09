@@ -1,8 +1,83 @@
-.flashcards-container{
-    display: grid;
-    grid-template-columns: 30% 30% 30%;
-    gap: 20px;
-    width: 100%;
-    height: 100%;
-    padding: 40px;
+.flashcards-page {
+  width: 100%;
+  height: 100%;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flashcards-controls {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flashcards-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.priority-filter{
+  border-radius: 5px 5px 5px 5px;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+}
+
+.flashcards-filter select {
+  padding: 6px 10px;
+}
+
+.flashcards-shuffle {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid #e0e6ed;
+  background: var(--secondary-color);
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+.flashcards-shuffle:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.flashcards-viewer {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.flashcards-arrow {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #403D58;
+}
+
+.flashcards-arrow:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.flashcards-card-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.flashcards-position {
+  font-size: 0.9rem;
+  color: #555;
 }
